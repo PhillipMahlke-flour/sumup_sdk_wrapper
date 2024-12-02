@@ -2,6 +2,6 @@
 
 * Initial release
 
-## 0.02
+## 0.0.2
 
 * Lowered the required Flutter SDK
