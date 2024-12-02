@@ -1,6 +1,6 @@
 name: sumup_sdk_wrapper
 description: "Flutter wrapper to use the latest SumUp SDK. Connect to a SumUp terminal, login and accept card payments on Android."
-version: 0.0.3
+version: 0.0.4
 repository: https://github.com/PhillipMahlke-flour/sumup_sdk_wrapper
 
 environment:

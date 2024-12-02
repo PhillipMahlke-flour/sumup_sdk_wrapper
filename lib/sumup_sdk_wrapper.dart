@@ -1,6 +1,12 @@
 import 'sumup_sdk_wrapper_platform_interface.dart';
 import 'dart:async';
 
+export 'models/sumup_payment.dart';
+export 'models/sumup_payment_request.dart';
+export 'models/sumup_plugin_checkout_response.dart';
+export 'models/sumup_plugin_merchant_response.dart';
+export 'models/sumup_plugin_response.dart';
+
 class SumupSdkWrapper {
   SumupSdkWrapper._();
 

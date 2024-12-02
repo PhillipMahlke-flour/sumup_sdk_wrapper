@@ -8,4 +8,8 @@
 
 ## 0.0.3
 
-* made SumupSdkWrapper s static utility Class
+* made SumupSdkWrapper a static utility Class
+
+## 0.0.4
+
+* added export statements for missing exports
