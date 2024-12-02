@@ -2,15 +2,17 @@ import 'sumup_sdk_wrapper_platform_interface.dart';
 import 'dart:async';
 
 class SumupSdkWrapper {
+  SumupSdkWrapper._();
+
   static bool _isInitialized = false;
 
-  void _throwIfNotInitialized() {
+  static void _throwIfNotInitialized() {
     if (!_isInitialized) {
       throw Exception('SumUp SDK is not initialized. You should call Sumup.init(affiliateKey)');
     }
   }
 
-  Future<void> _throwIfNotLoggedIn() async {
+  static Future<void> _throwIfNotLoggedIn() async {
     final isLogged = await isLoggedIn();
     if (isLogged == null || !isLogged) {
       throw Exception('Not logged in. You must login before.');
@@ -21,7 +23,7 @@ class SumupSdkWrapper {
   ///
   /// Must be called only once before anything else. Calling this again has no effect since
   /// the SDK has already been initialized.
-  Future<SumupPluginResponse> init(String affiliateKey) async {
+  static Future<SumupPluginResponse> init(String affiliateKey) async {
     if (_isInitialized) {
       return SumupPluginResponse.fromMap({
         'methodName': 'initSDK',
@@ -39,24 +41,24 @@ class SumupSdkWrapper {
   /// Shows SumUp login dialog.
   ///
   /// Should be called after [init].
-  Future<SumupPluginResponse> login() {
+  static Future<SumupPluginResponse> login() {
     return SumupSdkWrapperPlatform.instance.login();
   }
 
   /// Uses Transparent authentication to login to SumUp SDK with supplied token.
   ///
   /// Should be called after [init].
-  Future<SumupPluginResponse> loginWithToken(String token) {
+  static Future<SumupPluginResponse> loginWithToken(String token) {
     return SumupSdkWrapperPlatform.instance.loginWithToken(token);
   }
 
   /// Returns whether merchant is already logged in.
-  Future<bool?> isLoggedIn() {
+  static Future<bool?> isLoggedIn() {
     return SumupSdkWrapperPlatform.instance.isLoggedIn();
   }
 
   /// Returns the current merchant.
-  Future<SumupPluginMerchantResponse> get merchant async {
+  static Future<SumupPluginMerchantResponse> get merchant async {
     _throwIfNotInitialized();
     await _throwIfNotLoggedIn();
     return SumupSdkWrapperPlatform.instance.merchant;
@@ -65,7 +67,7 @@ class SumupSdkWrapper {
   /// Opens SumUp dialog to connect to a card terminal.
   ///
   /// Login required.
-  Future<SumupPluginResponse> openSettings() async {
+  static Future<SumupPluginResponse> openSettings() async {
     _throwIfNotInitialized();
     await _throwIfNotLoggedIn();
     return SumupSdkWrapperPlatform.instance.openSettings();
@@ -76,7 +78,7 @@ class SumupSdkWrapper {
   /// Don't call this method during checkout because it can lead to checkout failure.
   /// Login required.
   @Deprecated('Use prepareForCheckout() instead')
-  Future<SumupPluginResponse> wakeUpTerminal() {
+  static Future<SumupPluginResponse> wakeUpTerminal() {
     return prepareForCheckout();
   }
 
@@ -85,7 +87,7 @@ class SumupSdkWrapper {
   ///
   /// Don't call this method during checkout because it can lead to checkout failure.
   /// Login required.
-  Future<SumupPluginResponse> prepareForCheckout() async {
+  static Future<SumupPluginResponse> prepareForCheckout() async {
     _throwIfNotInitialized();
     await _throwIfNotLoggedIn();
     return SumupSdkWrapperPlatform.instance.prepareForCheckout();
@@ -94,7 +96,7 @@ class SumupSdkWrapper {
   /// Checks if Tip on Card Reader (TCR) feature is available.
   ///
   /// Login required.
-  Future<bool> get isTipOnCardReaderAvailable async {
+  static Future<bool> get isTipOnCardReaderAvailable async {
     _throwIfNotInitialized();
     await _throwIfNotLoggedIn();
     return SumupSdkWrapperPlatform.instance.isTipOnCardReaderAvailable;
@@ -103,7 +105,7 @@ class SumupSdkWrapper {
   /// Starts a checkout process with [paymentRequest].
   ///
   /// Login required.
-  Future<SumupPluginCheckoutResponse> checkout(SumupPaymentRequest paymentRequest) async {
+  static Future<SumupPluginCheckoutResponse> checkout(SumupPaymentRequest paymentRequest) async {
     _throwIfNotInitialized();
     await _throwIfNotLoggedIn();
 
@@ -114,11 +116,11 @@ class SumupSdkWrapper {
   }
 
   /// Performs logout.
-  Future<SumupPluginResponse> logout() {
+  static Future<SumupPluginResponse> logout() {
     return SumupSdkWrapperPlatform.instance.logout();
   }
 
-  Future<String?> getPlatformVersion() {
+  static Future<String?> getPlatformVersion() {
     return SumupSdkWrapperPlatform.instance.getPlatformVersion();
   }
 }

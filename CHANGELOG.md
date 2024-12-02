@@ -5,3 +5,7 @@
 ## 0.0.2
 
 * Lowered the required Flutter SDK
+
+## 0.0.3
+
+* made SumupSdkWrapper s static utility Class
