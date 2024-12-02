@@ -3,7 +3,6 @@ import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 import 'sumup_sdk_wrapper_method_channel.dart';
 import 'dart:async';
 
-import 'models/sumup_payment.dart';
 import 'models/sumup_payment_request.dart';
 import 'models/sumup_plugin_checkout_response.dart';
 import 'models/sumup_plugin_merchant_response.dart';
