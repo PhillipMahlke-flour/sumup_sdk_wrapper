@@ -4,7 +4,7 @@ version: 0.0.1
 repository: https://github.com/PhillipMahlke-flour/sumup_sdk_wrapper
 
 environment:
-  sdk: ^3.5.3
+  sdk: ^3.5.2
   flutter: '>=3.3.0'
 
 dependencies:

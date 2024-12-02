@@ -1,3 +1,7 @@
 ## 0.0.1
 
-* TODO: Describe initial release.
+* Initial release
+
+## 0.02
+
+* Lowered the required Flutter SDK
