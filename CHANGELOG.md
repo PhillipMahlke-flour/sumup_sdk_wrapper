@@ -13,3 +13,7 @@
 ## 0.0.4
 
 * added export statements for missing exports
+
+## 0.0.5
+
+* updated readme
