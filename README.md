@@ -1,13 +1,15 @@
 # sumup_sdk_wrapper
 
-Flutter wrapper to use the latest SumUp SDK.
+Currently not maintained, as the original Project was updated. Please use [sumup](https://pub.dev/packages/sumup) instead.
+
+Flutter wrapper to use the latest SumUp SDK. Based on [sumup](https://pub.dev/packages/sumup).
 
 Connect to a SumUp terminal, login and accept card payments on Android.
 
 ## Prerequisites
 
 1) Registered for a merchant account via SumUp's [country websites](https://sumup.de/flour) (or received a test account).
-2) Received SumUp card terminal: Air, Air Lite, PIN+ terminal, Chip & Signature reader, or SumUp Air Register.
+2) Received SumUp card terminal: Air, Air Lite, PIN+ terminal, Chip & Signature reader, SumUp Air Register, Solo or Solo Lite (Solo and Solo Lite are currently in beta).
 3) Requested an Affiliate (Access) Key and registered your application ID via [SumUp Dashboard](https://me.sumup.com/developers) for Developers.
 4) Android minSdkVersion 23 or higher.
 
